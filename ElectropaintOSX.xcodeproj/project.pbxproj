@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6E4C8EDC0773791C001170E5 /* ElectropaintView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4C8EDA0773791C001170E5 /* ElectropaintView.h */; };
 		6E4C8EDD0773791C001170E5 /* ElectropaintView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E4C8EDB0773791C001170E5 /* ElectropaintView.mm */; };
-		6E4C8EE00773797F001170E5 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C8EDF0773797F001170E5 /* GLUT.framework */; };
-		6E4C8F0307739A27001170E5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C8F0207739A27001170E5 /* OpenGL.framework */; };
-		8D255AC70486D3F9007BF209 /* ElectropaintOSX_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* ElectropaintOSX_Prefix.pch */; };
+		CC100001000000000000CC01 /* ElectropaintRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC100002000000000000CC02 /* ElectropaintRenderer.mm */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
+		AA100002000000000000AA02 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA100001000000000000AA01 /* Metal.framework */; };
+		AA100004000000000000AA04 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = AA100003000000000000AA03 /* Shaders.metal */; };
+		AA100006000000000000AA06 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA100005000000000000AA05 /* QuartzCore.framework */; };
 		EA938F2515ECA3A10083AD55 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = EA938F2415ECA3A10083AD55 /* thumbnail.png */; };
 		EA938F2715ECA3A80083AD55 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA938F2615ECA3A80083AD55 /* thumbnail@2x.png */; };
 /* End PBXBuildFile section */
@@ -24,16 +25,18 @@
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		32DBCFA80370C50100C91783 /* ElectropaintOSX_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectropaintOSX_Prefix.pch; sourceTree = "<group>"; };
 		6E4C8EDA0773791C001170E5 /* ElectropaintView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ElectropaintView.h; sourceTree = "<group>"; };
 		6E4C8EDB0773791C001170E5 /* ElectropaintView.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = ElectropaintView.mm; sourceTree = "<group>"; };
-		6E4C8EDF0773797F001170E5 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
-		6E4C8F0207739A27001170E5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		CC100002000000000000CC02 /* ElectropaintRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ElectropaintRenderer.mm; sourceTree = "<group>"; };
+		CC100003000000000000CC03 /* ElectropaintRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectropaintRenderer.h; sourceTree = "<group>"; };
+		AA100001000000000000AA01 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = /System/Library/Frameworks/Metal.framework; sourceTree = "<absolute>"; };
+		AA100003000000000000AA03 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		AA100005000000000000AA05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* ElectropaintOSX.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElectropaintOSX.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		9223D9DD224F686400DB0E93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA938F2415ECA3A10083AD55 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		EA938F2615ECA3A80083AD55 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
-		EAE88C6524A75D0900FD45B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +46,8 @@
 			files = (
 				8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */,
 				8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */,
-				6E4C8EE00773797F001170E5 /* GLUT.framework in Frameworks */,
-				6E4C8F0307739A27001170E5 /* OpenGL.framework in Frameworks */,
+				AA100002000000000000AA02 /* Metal.framework in Frameworks */,
+				AA100006000000000000AA06 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,21 +58,23 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
-				32DBCFA70370C4F300C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = ElectropaintOSX;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6E4C8F0207739A27001170E5 /* OpenGL.framework */,
-				6E4C8EDF0773797F001170E5 /* GLUT.framework */,
-				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
-				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */,
+				AA100001000000000000AA01 /* Metal.framework */,
+				AA100005000000000000AA05 /* QuartzCore.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
 			);
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -90,26 +95,11 @@
 			children = (
 				6E4C8EDA0773791C001170E5 /* ElectropaintView.h */,
 				6E4C8EDB0773791C001170E5 /* ElectropaintView.mm */,
+				CC100003000000000000CC03 /* ElectropaintRenderer.h */,
+				CC100002000000000000CC02 /* ElectropaintRenderer.mm */,
+				AA100003000000000000AA03 /* Shaders.metal */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
-				06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				089C1672FE841209C02AAC07 /* Foundation.framework */,
-				089C167FFE841241C02AAC07 /* AppKit.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
@@ -120,14 +110,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32DBCFA70370C4F300C91783 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				32DBCFA80370C50100C91783 /* ElectropaintOSX_Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,7 +117,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D255AC70486D3F9007BF209 /* ElectropaintOSX_Prefix.pch in Headers */,
 				6E4C8EDC0773791C001170E5 /* ElectropaintView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +132,6 @@
 				8D255AC90486D3F9007BF209 /* Resources */,
 				8D255ACB0486D3F9007BF209 /* Sources */,
 				8D255ACD0486D3F9007BF209 /* Frameworks */,
-				8D255AD00486D3F9007BF209 /* Rez */,
 			);
 			buildRules = (
 			);
@@ -169,10 +149,11 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2630;
 			};
 			buildConfigurationList = CBD518070C3E95E6008328F8 /* Build configuration list for PBXProject "ElectropaintOSX" */;
-			compatibilityVersion = "Xcode 11.4";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -201,22 +182,14 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXRezBuildPhase section */
-		8D255AD00486D3F9007BF209 /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8D255ACB0486D3F9007BF209 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6E4C8EDD0773791C001170E5 /* ElectropaintView.mm in Sources */,
+				CC100001000000000000CC01 /* ElectropaintRenderer.mm in Sources */,
+				AA100004000000000000AA04 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +199,7 @@
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EAE88C6524A75D0900FD45B1 /* en */,
+				9223D9DD224F686400DB0E93 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -237,8 +210,7 @@
 		CBD518010C3E95E4008328F8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_CPP_STATIC_DESTRUCTORS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -257,20 +229,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				DEVELOPMENT_TEAM = 848G93TEQ4;
-				ENABLE_OPENMP_SUPPORT = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_AUTO_VECTORIZATION = NO;
-				"GCC_ENABLE_OBJC_GC[sdk=macosx10.6][arch=x86_64]" = required;
-				GCC_ENABLE_SSE3_EXTENSIONS = YES;
-				GCC_ENABLE_SSE41_EXTENSIONS = NO;
-				GCC_ENABLE_SSE42_EXTENSIONS = NO;
-				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -278,19 +241,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				SDKROOT = macosx;
-				USE_HEADERMAP = NO;
 			};
 			name = Development;
 		};
 		CBD518020C3E95E4008328F8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_CPP_STATIC_DESTRUCTORS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -309,20 +269,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				DEVELOPMENT_TEAM = 848G93TEQ4;
-				ENABLE_OPENMP_SUPPORT = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_AUTO_VECTORIZATION = NO;
-				"GCC_ENABLE_OBJC_GC[sdk=macosx10.6][arch=x86_64]" = required;
-				GCC_ENABLE_SSE3_EXTENSIONS = YES;
-				GCC_ENABLE_SSE41_EXTENSIONS = NO;
-				GCC_ENABLE_SSE42_EXTENSIONS = NO;
-				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -330,19 +280,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
-				USE_HEADERMAP = NO;
 			};
 			name = Deployment;
 		};
 		CBD518030C3E95E4008328F8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_CPP_STATIC_DESTRUCTORS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -361,20 +307,10 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				DEVELOPMENT_TEAM = 848G93TEQ4;
-				ENABLE_OPENMP_SUPPORT = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_AUTO_VECTORIZATION = NO;
-				"GCC_ENABLE_OBJC_GC[sdk=macosx10.6][arch=x86_64]" = required;
-				GCC_ENABLE_SSE3_EXTENSIONS = YES;
-				GCC_ENABLE_SSE41_EXTENSIONS = NO;
-				GCC_ENABLE_SSE42_EXTENSIONS = NO;
-				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -382,10 +318,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
-				USE_HEADERMAP = NO;
 			};
 			name = Default;
 		};
@@ -393,36 +327,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ElectropaintOSX_Prefix.pch;
+				CURRENT_PROJECT_VERSION = 0.4.0;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MARKETING_VERSION = 0.3.7;
-				OTHER_CFLAGS = (
-					"-D",
-					GL_SILENCE_DEPRECATION,
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.lloydslounge.electropaint;
 				PRODUCT_NAME = ElectropaintOSX;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -436,36 +355,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
+				CURRENT_PROJECT_VERSION = 0.4.0;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ElectropaintOSX_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MARKETING_VERSION = 0.3.7;
-				OTHER_CFLAGS = (
-					"-D",
-					GL_SILENCE_DEPRECATION,
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.lloydslounge.electropaint;
 				PRODUCT_NAME = ElectropaintOSX;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -479,35 +383,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
+				CURRENT_PROJECT_VERSION = 0.4.0;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ElectropaintOSX_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
-				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MARKETING_VERSION = 0.3.7;
-				OTHER_CFLAGS = (
-					"-D",
-					GL_SILENCE_DEPRECATION,
-				);
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.lloydslounge.electropaint;
 				PRODUCT_NAME = ElectropaintOSX;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",

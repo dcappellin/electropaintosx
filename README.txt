@@ -1,12 +1,14 @@
 README
 ------
 
-ElectropaintOSX v. 0.3.7
+ElectropaintOSX v. 0.4.0
 
-ElectropaintOSX is an OS X screensaver module port of Kent Rosenkoetter's 
-clone of SGI's Electropaint screensaver "the most mesmerizing screensaver 
-ever written".  This port only wraps Kent's OpenGL code in a screensaver 
-module using Objective-C++.  
+ElectropaintOSX is a macOS screensaver port of Kent Rosenkoetter's clone
+of SGI's Electropaint screensaver "the most mesmerizing screensaver ever
+written".  This version replaces the original OpenGL renderer with a fully
+Metal-based renderer, restoring compatibility with macOS 26 (Sequoia) and
+later where OpenGL and NSOpenGLView are no longer functional in screensaver
+contexts.
 
 Kent's page can be found here:
 
@@ -31,11 +33,11 @@ History
 
     Version 0.3.1 is a universal binary, currently raising the minimum 
     system requirements to 10.5. It supports 64-bit and Garbage Collection 
-    under 10.6.  Changes by Thomas Vo§en <info@crimsonmagic.net>.
+    under 10.6.  Changes by Thomas Voï¿½en <info@crimsonmagic.net>.
 
     Version 0.3.2 has been build against the 10.8 SDK. It is compatible 
     with Mac OS X 10.8, raising the minimum system requirements to 
-    10.8.0. No changes in code. Build by Thomas Vo§en 
+    10.8.0. No changes in code. Build by Thomas Voï¿½en 
     <info@crimsonmagic.net>.
 
     Version 0.3.3 includes normal and HIPDI icons used in the system
@@ -52,6 +54,63 @@ History
     The minimum system requirement is now 10.9.
 
     Version 0.3.7 is a minor update to support hi-res displays.
+
+    Version 0.4.0 is a complete rewrite of the renderer for macOS 26
+    (Sequoia) compatibility. Key changes:
+
+    - OpenGL/NSOpenGLView replaced with Metal (CAMetalLayer as sublayer).
+      OpenGL is non-functional in screensaver contexts on macOS 26 due to
+      layer-backed view changes.
+
+    - Rendering logic extracted into ElectropaintRenderer, a standalone
+      NSObject class that owns the Metal pipeline, animation state, and
+      CAMetalLayer.  ElectropaintView is now a thin ScreenSaverView
+      subclass that delegates to the renderer.
+
+    - Per-instance state stored via Objective-C associated objects
+      (objc_setAssociatedObject). macOS 26 runs screensavers inside
+      legacyScreenSaver.appex, an XPC extension that creates multiple
+      ElectropaintView instances per process (probe views for display
+      enumeration plus the actual view). Using associated objects ensures
+      each instance has independent state with no cross-instance
+      interference or ivar offset collisions with ScreenSaverView
+      private ivars.
+
+    - Visibility tracking for soft-stop. On macOS 26, the framework
+      often does NOT call stopAnimation when the screensaver is
+      dismissed, leaving the legacyScreenSaver process alive with its
+      internal _oneStep: timer consuming CPU. The view now detects
+      dismissal via NSWindowWillCloseNotification, viewDidMoveToWindow,
+      and a watchdog in animateOneFrame. When any view detects dismissal,
+      all views in the process are soft-stopped (stopAnimation called on
+      each) to reach 0% residual CPU.
+
+    - NSPrincipalClass corrected to "ElectropaintView" (was
+      "ElectropaintOSXView"). An incorrect value causes the ScreenSaver
+      framework to scan all NSObject subclasses and call
+      initWithFrame:isPreview: on each one, resulting in a crash.
+
+    - Code signing required after installation. Copying the bundle with
+      cp -R changes the binary mtime, invalidating Xcode's embedded
+      signature. macOS 26 enforces cs_mtime == mtime strictly and will
+      silently remove bundles that fail dlopen. Always run:
+        codesign --force --sign - ~/Library/Screen\ Savers/ElectropaintOSX.saver
+      immediately after copying.
+
+    - Minimum system requirement raised to macOS 26.0.
+    - Universal binary: arm64 + x86_64.
+    - Build requires Xcode 26 or later.
+    - Legacy Carbon Resources build phase removed from project.
+
+Building and Installing
+-----------------------
+
+    Build:
+        xcodebuild -project ElectropaintOSX.xcodeproj -configuration Development
+
+    Install (must re-sign after copy):
+        cp -R build/Development/ElectropaintOSX.saver ~/Library/Screen\ Savers/
+        codesign --force --sign - ~/Library/Screen\ Savers/ElectropaintOSX.saver
 
 License
 -------

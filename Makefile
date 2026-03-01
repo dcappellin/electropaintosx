@@ -2,7 +2,7 @@
 
 PROJNAME   = ElectropaintOSX
 PROJEXT    = saver
-PROJVERS   = 0.3.7
+PROJVERS   = 0.4.0
 BUNDLEID   = "org.lloydslounge.electropaint"
 
 # extra files to include in the package
@@ -23,9 +23,6 @@ HDIUTIL    = /usr/bin/hdiutil
 CODESIGN   = /usr/bin/codesign
 
 # code sign arguments
-# based on:
-# https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/customizing_the_notarization_workflow
-# https://stackoverflow.com/questions/53112078/how-to-upload-dmg-file-for-notarization-in-xcode
 
 CODESIGN_ARGS = --force \
                 --verify \
@@ -36,12 +33,16 @@ CODESIGN_ARGS = --force \
 
 # build results directory
 
-BUILD_RESULTS_DIR = build/Default/$(PROJNAME).$(PROJEXT)
+BUILD_RESULTS_DIR = build/Development/$(PROJNAME).$(PROJEXT)
 
-# build the app
+# build the screensaver
 
 all:
-	$(XCODEBUILD) -project $(PROJNAME).xcodeproj -configuration Release
+	$(XCODEBUILD) -project $(PROJNAME).xcodeproj -configuration Development
+
+install: all
+	cp -R $(BUILD_RESULTS_DIR) ~/Library/Screen\ Savers/
+	$(CODESIGN) --force --sign - ~/Library/Screen\ Savers/$(PROJNAME).$(PROJEXT)
 
 sign: all
 	$(CODESIGN) $(CODESIGN_ARGS) $(BUILD_RESULTS_DIR)
@@ -70,10 +71,9 @@ notarize: sign_dmg
               --username $(USERID) \
               --file $(PROJNAME)-$(PROJVERS).dmg
 
-# staple the ticket to the dmg, but notarize needs to complete first,
-# so we can't list notarize as a pre-requisite target
+# staple the ticket to the dmg
 
-staple: 
+staple:
 	$(STAPLER) staple $(PROJNAME)-$(PROJVERS).dmg
 	$(STAPLER) validate $(PROJNAME)-$(PROJVERS).dmg
 
